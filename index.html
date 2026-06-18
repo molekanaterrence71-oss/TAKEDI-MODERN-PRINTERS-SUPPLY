@@ -6,12 +6,15 @@
     <title>TAKEDI Modern Printers & Supply | Design • Print • Brand</title>
     <meta name="description" content="Professional printing, branding, and signage solutions in Mokopane, South Africa. Quality large format printing, vehicle branding, and signs.">
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- FontAwesome Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Embedded CSS Styling Matrix -->
     <style>
         /* --- Root Colors & Global Variables --- */
         :root {
@@ -193,14 +196,19 @@
         }
 
         .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--dark-blue);
-            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
         }
 
-        .logo span {
-            color: var(--orange);
+        .logo img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.sticky-active .logo img {
+            height: 40px;
         }
 
         .nav-menu {
@@ -757,12 +765,14 @@
 </head>
 <body>
 
+    <!-- Back to Top Button -->
     <button id="backToTop" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
+    <!-- Global Navigation Header -->
     <header class="navbar">
         <div class="nav-container">
             <a href="#/" class="logo">
-                TAKEDI<span>MODERN</span>
+                <img src="https://i.postimg.cc/gkYMsvW1/download.png" alt="TAKEDI Modern Logo">
             </a>
             <nav class="nav-menu">
                 <a href="#/" class="nav-link" data-route="/">Home</a>
@@ -780,15 +790,19 @@
         </div>
     </header>
 
+    <!-- SPA Dynamic Rendering Target View Container -->
     <main id="app">
-        </main>
+        <!-- JavaScript dynamically injects active view segments here -->
+    </main>
 
+    <!-- Global Lightbox Modal Component -->
     <div id="lightboxModal" class="lightbox">
         <span class="close-lightbox">×</span>
         <img class="lightbox-content" id="lightboxImg" alt="Enlarged Showcase View">
         <div id="lightboxCaption"></div>
     </div>
 
+    <!-- Global Footer Platform -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col">
@@ -817,6 +831,7 @@
         </div>
     </footer>
 
+    <!-- App Router Script Engine Script Blocks -->
     <script>
         /**
          * TAKEDI Modern Printers & Supply
@@ -827,6 +842,7 @@
         const views = {
             home: `
                 <div class="view-fade">
+                    <!-- Hero Section -->
                     <section class="hero-section">
                         <div class="hero-overlay"></div>
                         <div class="hero-content">
@@ -839,6 +855,7 @@
                         </div>
                     </section>
 
+                    <!-- Why Choose Us Component Context -->
                     <section class="why-section section-padding">
                         <div class="container">
                             <div class="section-header text-center">
@@ -870,6 +887,7 @@
                         </div>
                     </section>
 
+                    <!-- Testimonials Component Layer -->
                     <section class="testimonials-section section-padding">
                         <div class="container">
                             <div class="section-header text-center">
