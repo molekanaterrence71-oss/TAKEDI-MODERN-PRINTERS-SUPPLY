@@ -380,49 +380,77 @@
             margin-bottom: 15px;
         }
 
-        /* --- Services Display Panel --- */
+        /* --- Services Visual Display Grid --- */
         .services-section {
             margin-top: 75px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .service-card {
             background-color: var(--white);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 25px 20px;
-            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
             transition: var(--transition-smooth);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .service-card:hover {
-            background-color: var(--dark-blue);
-            border-color: var(--dark-blue);
-            transform: scale(1.03);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 91, 154, 0.1);
+            border-color: var(--light-blue);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.06);
+        }
+
+        .service-content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-content {
+            background-color: #f0f7ff;
         }
 
         .service-icon {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--orange);
-            margin-bottom: 15px;
-            transition: var(--transition-smooth);
+            margin-bottom: 10px;
         }
 
         .service-card h3 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--dark-blue);
-            transition: var(--transition-smooth);
-        }
-
-        .service-card:hover .service-icon,
-        .service-card:hover h3 {
-            color: var(--white);
         }
 
         /* --- Pricing Engine Panels --- */
@@ -718,7 +746,7 @@
             .nav-menu {
                 position: fixed; left: -100%; top: 75px; flex-direction: column;
                 background-color: var(--white); width: 100%; text-align: center;
-                box-shadow: 0 10px 15 rgba(0,0,0,0.05); transition: 0.3s ease; padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05); transition: 0.3s ease; padding: 20px 0;
             }
             .nav-menu.active { left: 0; }
             .nav-link { display: block; padding: 15px 0; }
@@ -791,7 +819,7 @@
 
     <script>
         /**
-                  * TAKEDI Modern Printers & Supply
+         * TAKEDI Modern Printers & Supply
          * Unified Vanilla JS SPA Core Engine Router
          */
 
@@ -827,7 +855,7 @@
                                     <div class="why-icon"><i class="fas fa-bolt"></i></div>
                                     <h3>Fast Turnaround Time</h3>
                                     <p>We understand project deadlines. Our efficient process ensures your branding is ready when you need it.</p>
-                                }
+                                </div>
                                 <div class="why-card">
                                     <div class="why-icon"><i class="fas fa-tags"></i></div>
                                     <h3>Affordable Pricing</h3>
@@ -897,31 +925,106 @@
                             <h2>Our Services</h2>
                         </div>
                         <div class="services-grid">
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-print"></i></div><h3>Large Format Printing</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-layer-group"></i></div><h3>Signage Boards</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-hard-hat"></i></div><h3>Mine Signage (Reflective/Non-Reflective)</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-truck-moving"></i></div><h3>Fleet Stickers</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-scroll"></i></div><h3>Wallpaper</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-car"></i></div><h3>Vehicle Branding</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-store"></i></div><h3>Shop Branding</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-image"></i></div><h3>Wall Banners</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-campground"></i></div><h3>Gazebos</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-arrows-alt-v"></i></div><h3>Pull-Up Banners</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-tshirt"></i></div><h3>T-Shirt Printing</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-magnet"></i></div><h3>Car Magnetic Stickers</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-lightbulb"></i></div><h3>Lightboxes</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-flag"></i></div><h3>Telescopic Flags</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-tint"></i></div><h3>Teardrop Flags</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-exclamation-triangle"></i></div><h3>Safety Signage</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-sticky-note"></i></div><h3>Label Stickers</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-border-all"></i></div><h3>Correx Boards</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-palette"></i></div><h3>Canvas Printing</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-border-style"></i></div><h3>Window Film/Frosting</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-id-badge"></i></div><h3>Name Tags</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-stamp"></i></div><h3>Rubber Stamps</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-address-card"></i></div><h3>Business Cards</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-paper-plane"></i></div><h3>Flyers</h3></div>
-                            <div class="service-card"><div class="service-icon"><i class="fas fa-wine-bottle"></i></div><h3>Bottle Stickers</h3></div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/Prkk6k87/Gemini-Generated-Image-862jil862jil862j.png" alt="Large Format Printing"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-print"></i></div><h3>Large Format Printing</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/XJN1p4X6/cbec9593-488c-4cc7-bf98-06738ea1404b.png" alt="Signage Boards"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-layer-group"></i></div><h3>Signage Boards</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/Jzgzp23Z/Gemini-Generated-Image-906x3o906x3o906x.png" alt="Mine Signage"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-hard-hat"></i></div><h3>Mine Signage (Reflective/Non-Reflective)</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/GpmvD2PX/Gemini-Generated-Image-soa26soa26soa26s.png" alt="Fleet Stickers"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-truck-moving"></i></div><h3>Fleet Stickers</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/76Fk75zZ/Gemini-Generated-Image-kc2kllkc2kllkc2k.png" alt="Wallpaper"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-scroll"></i></div><h3>Wallpaper</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/W111sJw2/Gemini-Generated-Image-8ck13b8ck13b8ck1.png" alt="Vehicle Branding"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-car"></i></div><h3>Vehicle Branding</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/T1nJ2sGm/Gemini-Generated-Image-5ydcrd5ydcrd5ydc.png" alt="Shop Branding"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-store"></i></div><h3>Shop Branding</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/bJJ5JpFg/Gemini-Generated-Image-meeiybmeeiybmeei.png" alt="Wall Banners"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-image"></i></div><h3>Wall Banners</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/SKBJDxFg/Copilot-20260618-120155.png" alt="Gazebos"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-campground"></i></div><h3>Gazebos</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/tJY6MmvV/Use-AI-Image-Jun-18-2026-12-20-10.png" alt="Pull-Up Banners"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-arrows-alt-v"></i></div><h3>Pull-Up Banners</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/yNybTnbw/Mm-GXD.jpg" alt="T-Shirt Printing"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-tshirt"></i></div><h3>T-Shirt Printing</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/GpgSN9b6/ya-GOF.jpg" alt="Car Magnetic Stickers"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-magnet"></i></div><h3>Car Magnetic Stickers</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://i.postimg.cc/9QK7njv1/ofnm-O.jpg" alt="Lightboxes"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-lightbulb"></i></div><h3>Lightboxes</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1541535650810-10d26f5c2ab3?auto=format&fit=crop&w=400&q=80" alt="Telescopic Flags"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-flag"></i></div><h3>Telescopic Flags</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1505232458627-4676be6ea915?auto=format&fit=crop&w=400&q=80" alt="Teardrop Flags"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-tint"></i></div><h3>Teardrop Flags</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=400&q=80" alt="Safety Signage"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-exclamation-triangle"></i></div><h3>Safety Signage</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=400&q=80" alt="Label Stickers"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-sticky-note"></i></div><h3>Label Stickers</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=400&q=80" alt="Correx Boards"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-border-all"></i></div><h3>Correx Boards</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=400&q=80" alt="Canvas Printing"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-palette"></i></div><h3>Canvas Printing</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Window Film/Frosting"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-border-style"></i></div><h3>Window Film/Frosting</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" alt="Name Tags"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-id-badge"></i></div><h3>Name Tags</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80" alt="Rubber Stamps"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-stamp"></i></div><h3>Rubber Stamps</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=400&q=80" alt="Business Cards"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-address-card"></i></div><h3>Business Cards</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=400&q=80" alt="Flyers"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-paper-plane"></i></div><h3>Flyers</h3></div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-img"><img src="https://images.unsplash.com/photo-1527661591475-527312dd65f5?auto=format&fit=crop&w=400&q=80" alt="Bottle Stickers"></div>
+                                <div class="service-content"><div class="service-icon"><i class="fas fa-wine-bottle"></i></div><h3>Bottle Stickers</h3></div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -1057,7 +1160,7 @@
                             </div>
                         </div>
                         <div class="map-container">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.2052163901456!2d28.99596377610334!3d-24.19083327837424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6cb413998822d%3A0x7d0fa0ee6f112005!2s15%20Nelson%20Mandela%20Dr%2C%20Mokopane%2C%200601!5e0!3m2!1sen!2sza!4v1710000000000!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="https://maps.google.com/maps?q=15%20Nelson%20Mandela%20Dr,%20Mokopane&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </section>
